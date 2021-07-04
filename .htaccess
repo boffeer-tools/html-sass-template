@@ -1,0 +1,9 @@
+<Files ~ "^\.(htaccess|htpasswd)$">
+deny from all
+</Files>
+ErrorDocument 404 https://boffeer.ffox.site/
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^(www\.boffeer\.ffox\.site)(:80)? [NC]
+RewriteRule ^(.*) https://boffeer.ffox.site/$1 [R=301,L]
+DirectoryIndex index.html       
+order deny,allow

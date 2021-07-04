@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/subset-Gilroy-Regular.woff2') format('woff2'),
+        url('../fonts/subset-Gilroy-Regular.woff') format('woff'),
+        url('../fonts/subset-Gilroy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/subset-Gilroy-Bold.woff2') format('woff2'),
+        url('../fonts/subset-Gilroy-Bold.woff') format('woff'),
+        url('../fonts/subset-Gilroy-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PT Serif';
+    src: url('../fonts/subset-PTSerif-Bold.woff2') format('woff2'),
+        url('../fonts/subset-PTSerif-Bold.woff') format('woff'),
+        url('../fonts/subset-PTSerif-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PT Serif';
+    src: url('../fonts/subset-PTSerif-Regular.woff2') format('woff2'),
+        url('../fonts/subset-PTSerif-Regular.woff') format('woff'),
+        url('../fonts/subset-PTSerif-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
