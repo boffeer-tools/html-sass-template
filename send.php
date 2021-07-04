@@ -1,8 +1,8 @@
 <?php
 
 	// configs
-	$email_to = 'boffeechane@gmail.com';
-	$email_from = 'boffeechane@gmail.com';
+	$email_to = '';
+	$email_from = '';
 	$email_subject = "Заявка на бесплатный замер";
 
     $msg_box = ""; 
@@ -41,10 +41,10 @@
 <?php
 
 //В переменную $token нужно вставить токен, который нам прислал @botFather
-$token = "1872675023:AAFDfSx4Dyu7AKVz4Zv0RCt9DoIPOrnhsNw";
+$token = "";
 
 //Сюда вставляем chat_id
-$chat_id = "-530279962";
+$chat_id = "";
 
 //Определяем переменные для передачи данных из нашей формы
 // if ($_POST['act'] == 'order') {
@@ -72,7 +72,7 @@ $chat_id = "-530279962";
 
 
 // формируем запись в таблицу google (изменить)
-$url = "https://docs.google.com/forms/d/1uGqCaTxNc4_TkPn5eTfNi2u2Jq2wlnY5txMmk1GJZ3M/formResponse";
+$url = "https://docs.google.com/forms/d/ссылка_на_твой_опросник/formResponse";
 
 // массив данных (изменить entry, draft и fbzx)
 $post_data = array (
