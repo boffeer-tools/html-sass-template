@@ -1,131 +1,138 @@
 html
-    --c-accent: #FFB75E
-    --c-text-regular: #0f0f0f
-    --c-text-second: #444
+	--c-accent: #FFB75E
+	--c-text-regular: #0f0f0f
+	--c-text-second: #444
 
-    --bg-button-primary: tomato
-    --bg-button-primary--hover: tomato
+	--bg-button-primary: tomato
+	--bg-button-primary--hover: tomato
 
-    --fz-base: 16px
-    --fz-title-section: 32px
+	--fz-base: 16px
+	--fz-title-section: 32px
 
-    --sm: 576px
-    --md: 768px
-    --lg: 992px
-    --xl: 1200px
-    --xxl: 1400px
+	--sm: 576px
+	--md: 768px
+	--lg: 992px
+	--xl: 1200px
+	--xxl: 1400px
 
-    --z-dropdown: 10
-    --z-tooltip: 20
-    --z-sticky-header: 90
-    --z-popup: 100
-    --z-burger-button: 50
-    --z-burger: 110
+	--z-dropdown: 10
+	--z-tooltip: 20
+	--z-sticky-header: 90
+	--z-popup: 100
+	--z-burger-button: 50
+	--z-burger: 110
+
+@mixin transition-mix ( $property: all, $duration: 0.2s, $timing: linear, $delay: 0s)
+	transition-property: $property
+	transition-duration: $duration
+	transition-timing-function: $timing
+	transition-delay: $delay
+
+@mixin position-absolute ( $top: null, $right: null, $bottom: null, $left: null)
+	position: absolute
+	top: $top
+	right: $right
+	bottom: $bottom
+	left: $left
 
 @mixin buttonPrimary
-    background-image: var(--bg-button-primary)
-    color: #fff
-    font-size: 18px
-    font-weight: bold
-    padding-top: 14px
-    padding-bottom: 14px
-    padding-right: 40px
-    padding-left: 40px
-    box-shadow: var(--shadow-button)
-    border-radius: 48px
-    transition: all 0.2s
-    &:hover
-        background-image: var(--bg-button-primary--hover)
-        transition: all 0.2s
-        box-shadow: none
-        transform: translateY(2px)
-    &:focus
-        background-image: var(--bg-button-primary--hover)
-        transition: all 0.2s
-        box-shadow: none
-        transform: translateY(2px)
-
+	background-image: var(--bg-button-primary)
+	color: #fff
+	font-size: 18px
+	font-weight: bold
+	padding-top: 14px
+	padding-bottom: 14px
+	padding-right: 40px
+	padding-left: 40px
+	box-shadow: var(--shadow-button)
+	border-radius: 48px
+	transition: all 0.2s
+	&:hover
+		background-image: var(--bg-button-primary--hover)
+		transition: all 0.2s
+		box-shadow: none
+		transform: translateY(2px)
+		&:focus
+			background-image: var(--bg-button-primary--hover)
+			transition: all 0.2s
+			box-shadow: none
+			transform: translateY(2px)
 
 *
-    box-sizing: border-box
-    outline: none
+	box-sizing: border-box
+	outline: none
 a
-    text-decoration: none
-    color: inherit
+	text-decoration: none
+	color: inherit
 
 .hidden
-    visibility: hidden
+	visibility: hidden
 
 a, button
-    cursor: pointer
+	cursor: pointer
 
 input, button
-    border: none
-    padding: 0
-    background: none
-    display: inline-block
+	border: none
+	padding: 0
+	background: none
+	display: inline-block
 
 p, ul, h1, h2, h3, h4, h5, h6, ol
-    padding: 0
-    margin: 0
-    font-weight: normal
+	padding: 0
+	margin: 0
+	font-weight: normal
 
 h2
-    font-size: var(--fz-title-section)
+	font-size: var(--fz-title-section)
 
 ul, ol
-    list-style: none
+	list-style: none
 
 body
-    font-size: var(--fz-base)
-    color: var(--c-text-regular)
-
-
+	font-size: var(--fz-base)
+	color: var(--c-text-regular)
 
 // __FORM
 .form
-    &-privacy
-        width: 100%
-        display: flex
-        justify-content: flex-start
-        align-items: center
-        &__checkbox
-            display: inline-flex
-            width: 15px
-            height: 15px
-            align-items: center
-            justify-content: center
-            background-color: rgb(130,130,130)
-            border-radius: 2px
-            position: relative
-            cursor: pointer
-            margin-right: 10px
-            &::after
-                content: ''
-                display: inline-block
-                position: absolute
-                width: 4px
-                height: 4px
-                border-radius: 50%
+	&-privacy
+		width: 100%
+		display: flex
+		justify-content: flex-start
+		align-items: center
+		&__checkbox
+			display: inline-flex
+			width: 15px
+			height: 15px
+			align-items: center
+			justify-content: center
+			background-color: rgb(130,130,130)
+			border-radius: 2px
+			position: relative
+			cursor: pointer
+			margin-right: 10px
+			&::after
+				content: ''
+				display: inline-block
+				position: absolute
+				width: 4px
+				height: 4px
+				border-radius: 50%
 .form-privacy__checkbox-hidden:checked + .form-privacy__checkbox
-    background-image: url(../img/form/form-check.svg)
-    background-size: 70%
-    background-position: center
-    background-repeat: no-repeat
-
-
+	background-image: url(../img/form/form-check.svg)
+	background-size: 70%
+	background-position: center
+	background-repeat: no-repeat
 
 .fixed
-    position: fixed
-    top: 0
-    left: 0
-
+	position: fixed
+	top: 0
+	left: 0
 
 // __POPS
 .popups
-    display: none
+	display: none
 .pop-thanks
-    width: 300px
-    padding: 40px 20px
-    background-color: #fff
-    border-radius: 12px
+	width: 300px
+	padding: 40px 20px
+	background-color: #fff
+	border-radius: 12px

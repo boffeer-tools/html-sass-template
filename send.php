@@ -1,6 +1,28 @@
 <?php
 
 	// configs
+
+    $formname = strip_tags($_POST['formname']);
+    $formname = htmlentities($_POST['formname'], ENT_QUOTES, "UTF-8");
+    $formname = htmlspecialchars($_POST['formname'], ENT_QUOTES);
+
+    $name = strip_tags($_POST['user_name']);
+    $name = htmlentities($_POST['user_name'], ENT_QUOTES, "UTF-8");
+    $name = htmlspecialchars($_POST['user_name'], ENT_QUOTES);
+
+    $tel = strip_tags($_POST['user_tel']);
+    $tel = htmlentities($_POST['user_tel'], ENT_QUOTES, "UTF-8");
+    $tel = htmlspecialchars($_POST['user_tel'], ENT_QUOTES);
+
+    $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+
+
+    $message_body = "<a href=\"$actual_link\">$actual_link</a><br/><br/>
+    Форма: $formname<br/><br/>
+    Имя: $name<br/><br/>
+    Телефон: $tel<br/><br/>";
+
+
 	$email_to = '';
 	$email_from = '';
 	$email_subject = "Заявка на бесплатный замер";
