@@ -1,168 +1,176 @@
 @font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Regular.woff2') format('woff2'),
-        url('../fonts/Montserrat-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+	src:
+		url("../fonts/Montserrat-Regular.woff2") format("woff2"),
+		url("../fonts/Montserrat-Regular.woff") format("woff");
+	font-family: "Montserrat";
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-SemiBold.woff2') format('woff2'),
-        url('../fonts/Montserrat-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
+	src:
+		url("../fonts/Montserrat-SemiBold.woff2") format("woff2"),
+		url("../fonts/Montserrat-SemiBold.woff") format("woff");
+	font-family: "Montserrat";
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Bold.woff2') format('woff2'),
-        url('../fonts/Montserrat-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+	src:
+		url("../fonts/Montserrat-Bold.woff2") format("woff2"),
+		url("../fonts/Montserrat-Bold.woff") format("woff");
+	font-family: "Montserrat";
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+:root {
+	--c-accent: #ffb75e;
+	--c-text-regular: #0f0f0f;
+	--c-text-second: #444;
+	--fz-regular: 18px;
+	--fz-title-section: 44px;
+	--z-dropdown: 10;
+	--z-tooltip: 20;
+	--z-sticky-header: 90;
+	--z-popup: 100;
+	--z-burger-button: 50;
+	--z-burger: 110;
 }
 
-html {
-	--c-accent: #FFB75E
-	--c-text-regular: #0f0f0f
-	--c-text-second: #444
-	--fz-regular: 18px
-	--fz-title-section: 44px
-	--z-dropdown: 10
-	--z-tooltip: 20
-	--z-sticky-header: 90
-	--z-popup: 100
-	--z-burger-button: 50
-	--z-burger: 110
-}
 $fz-p: var(--font-regular);
 $fz-h2: var(--font-title-section);
 
-@mixin transition-mix ( $property: all, $duration: 0.2s, $timing: linear, $delay: 0s) {
-	transition-property: $property
-	transition-duration: $duration
-	transition-timing-function: $timing
-	transition-delay: $delay
+@mixin transition-mix(
+	$property: all,
+	$duration: 0.2s,
+	$timing: linear,
+	$delay: 0s
+) {
+	transition-property: $property;
+	transition-duration: $duration;
+	transition-delay: $delay;
+	transition-timing-function: $timing;
 }
 
-@mixin position-absolute ( $top: null, $right: null, $bottom: null, $left: null) {
-	position: absolute
-	top: $top
-	right: $right
-	bottom: $bottom
-	left: $left
+@mixin position-absolute($top: null, $right: null, $bottom: null, $left: null) {
+	position: absolute;
+	left: $left;
+	right: $right;
+	top: $top;
+	bottom: $bottom;
 }
 
 @mixin buttonPrimary {
-	background-image: var(--bg-button-primary);
-	color: #fff;
-	font-size: 18px;
-	font-weight: bold;
-	padding-top: 14px;
-	padding-bottom: 14px;
-	padding-right: 40px;
-	padding-left: 40px;
 	border-radius: 48px;
+	padding-top: 14px;
+	padding-right: 40px;
+	padding-bottom: 14px;
+	padding-left: 40px;
+	font-weight: 700;
+	font-size: 18px;
+	color: #fff;
+	background-image: var(--bg-button-primary);
 	transition: all 0.2s;
-	&:hover {
-		background-image: var(--bg-button-primary--hover);
-		transition: all 0.2s;
-		box-shadow: none;
-		transform: translateY(2px);
-	}
 	&:focus {
-		background-image: var(--bg-button-primary--hover);
-		transition: all 0.2s;
 		box-shadow: none;
+		background-image: var(--bg-button-primary--hover);
 		transform: translateY(2px);
+		transition: all 0.2s;
+	}
+	&:hover {
+		box-shadow: none;
+		background-image: var(--bg-button-primary--hover);
+		transform: translateY(2px);
+		transition: all 0.2s;
 	}
 }
-
 * {
-	box-sizing: border-box
-	outline: none
+	outline: none;
+	box-sizing: border-box;
 }
 a {
 	text-decoration: none;
 	color: inherit;
 }
-
 .hidden {
 	visibility: hidden;
 }
-
-a, button {
+a,
+button {
 	cursor: pointer;
 }
-
 input,
 button {
+	display: inline-block;
 	border: none;
 	padding: 0;
 	background: none;
-	display: inline-block;
 }
-
-p, ul, h1, h2, h3, h4, h5, h6, ol {
-	padding: 0;
+p,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol {
 	margin: 0;
-	font-weight: normal;
+	padding: 0;
+	font-weight: 500;
 }
-
 h2 {
 	font-size: var(--fz-title-section);
 }
-
-ul, ol {
+ul,
+ol {
 	list-style: none;
 }
-
 body {
+	font-family: "Montserrat", "Arial", "Helvetica", sans-serif;
 	font-size: var(--fz-base);
 	color: var(--c-text-regular);
-	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
-
 .form-privacy {
-	width: 100%;
 	display: flex;
-	justify-content: flex-start;
 	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
 	&__checkbox {
+		position: relative;
 		display: inline-flex;
-		width: 15px;
-		height: 15px;
 		align-items: center;
 		justify-content: center;
-		background-color: rgb(130,130,130);
-		border-radius: 2px;
-		position: relative;
-		cursor: pointer;
 		margin-right: 10px;
+		border-radius: 2px;
+		width: 15px;
+		height: 15px;
+		background-color: rgb(130, 130, 130);
+		cursor: pointer;
 		&::after {
-			content: '';
-			display: inline-block;
+			content: "";
 			position: absolute;
+			display: inline-block;
+			border-radius: 50%;
 			width: 4px;
 			height: 4px;
-			border-radius: 50%;
 		}
 	}
 }
 .form-privacy__checkbox-hidden:checked + .form-privacy__checkbox {
-	background-image: url(../img/form/form-check.svg);
-	background-size: 70%;
+	background-image: url("../img/form/form-check.svg");
 	background-position: center;
+	background-size: 70%;
 	background-repeat: no-repeat;
 }
-
 .fixed {
 	position: fixed;
-	top: 0;
 	left: 0;
+	top: 0;
 }
 
 // __POPS
@@ -170,8 +178,8 @@ body {
 	display: none;
 }
 .pop-thanks {
-	width: 300px;
-	padding: 40px 20px;
-	background-color: #fff;
 	border-radius: 12px;
+	padding: 40px 20px;
+	width: 300px;
+	background-color: #fff;
 }

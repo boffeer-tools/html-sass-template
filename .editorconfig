@@ -39,5 +39,5 @@ trim_trailing_whitespace = true
 
 [*.{css,sass,scss,styl}]
 indent_style = tab
-tab_width = 4
+tab_width = 2
 trim_trailing_whitespace = true
