@@ -3,18 +3,22 @@
   "version": "1.0.0",
   "description": "[jQuery]()\r [jquery.fancybox]()\r [normalize]()\r [modality]()\r [jquery.inputmask]()\r [timer.jquery]()\r [aos]()\r [Owl]()",
   "main": "index.js",
-  "dependencies": {
-    "stylelint-config-standard": "^22.0.0",
-    "stylelint-scss": "^3.20.1",
-    "stylelint-order": "^4.1.0",
-    "stylelint-declaration-block-no-ignored-properties": "^2.4.0",
-    "stylelint": "^13.13.1"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "html-validate": "^5.5.0"
+    "browser-sync": "^2.27.7",
+    "editorconfig": "^0.15.3",
+    "editorconfig-checker": "^4.0.2",
+    "html-validate": "^5.5.0",
+    "postcss-cli": "^9.1.0",
+    "postcss-csso": "^6.0.0",
+    "postcss-import": "^14.0.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "editorconfig-checker --exclude '.git|node_modules|DS_Store'",
+    "start": "browser-sync start 'src' --server --no-notify --no-ui --cwd 'src' --files 'index.html,css/**/*'",
+    "syles": "postcss src/css/index.css --use postcss-import --use postcss-csso --output dist/css/index.css",
+    "build": "npm run styles",
+    "deploy": "cd dist && rsync --archive --compress --delete user@website.com:/var/www/website.com/html/"
   },
   "repository": {
     "type": "git",
